@@ -1,0 +1,91 @@
+// Pour lancer git bash dans le terminal
+C:\\More\git\bin\bash.exe
+
+// pour créer un fichier dans git bash
+$ touch index.html
+
+// pour initialiser un projet
+$ git init
+// Dans VSCode
+Cliquer sur l'icône en forme de Y à gauche, puis sur la petite icône git (initialiser le dépôt) à la droite de « Source control » et choisir le répertoire local de notre projet
+
+// Pour le gitHub en ligne (sur lequel on a un compte)
+$ git config --global user.name 'nomUtilisateur'
+$ git config --global user.email 'email@toto.com'
+
+Une fois qu'on est loggé sur gitHub, on peut ajouter notre fichier
+$ git add index.html
+--> en fait, on ajouter ce fichier à la liste des choses à sauvegarder. Une pré-sauvegarde quoi
+
+// Permet de voir tout les fichiers qu'on a ajouté à cette pré-sauvegarde
+$ git status
+--> le résultat :
+- Montre le fichier index.html qui a été ajouté
+- Montre les fichiers qui ne l'ont pas été
+- Montre les fichiers qui ont été supprimé localement mais toujours présents dans la pré-sauvegarde
+
+// Pour supprimer un fichier de la pré-sauvegarde
+$ git rm --cached index.html
+
+// pour ajouter tout un dossier (« . » étant le dossier courant)
+$ git add .
+// et donc si dans ce répertoire on veut supprimer un sous-répertoire avec tout ce qu'il contient
+$ git rm -r --cached .dossier/
+--> le -r est pour récursive et permet de supprimer tous les fichiers qui se trouve dedans
+
+Ou encore, pour supprimer tous les fichiers du dossier courant
+$ git rm -r --cached .
+
+// Pour ajouter tous les fichiers d'un même type
+$ git add *.html
+// et si on veut tous les HTML + choses
+$ git add *.html *.css
+
+// Si on veut récupérer en local toute la pré-sauvegarde (ex : dans le cas où un fichier a été supprimé)
+$ git checkout -- .
+
+// Donc une fois que notre pré-sauvegarde est bien belle, on va la sauvegarder (commit)
+$ git commit
+--> il y a une console VIM. L'idée s'est de commenter pourquoi on fait un commit. Ça nous permet de laisser une trace et dans le cas où on doit revenir en arrière
+Appuyer sur « i » pour voir la commende --INSERT-- et ajouter votre commentaire.
+Echap pour sortir de l'éditeur
+Puis
+:wq
+==> signifie :write and quit
+
+Si on veut aller plus vite et sauter les étapes VIM
+$ git commit -m 'Mes changements'
+
+//La commance (ou plutôt le fichier) .gitignore pour ignore certains fichier
+// On crée le fichier :
+$ touch .gitignore
+
+// Nous sommes dans le master. Pour démarrer quelque chose en parallèle, on crée une branche
+$ git branch fichierCSS
+// Et pour nous placer dans cette branch
+$ git checkout fichierCSS
+// on nou sindique maintenant que nous sommes sur la branche fichierCSS
+
+// Avoir la liste des branche
+$ git branch --list
+
+//*** PROBLEME POUR COMMIT DANS UNE BRANCHE :S ***//
+// Lorsque je modifie un fichier déjà existant...
+// Tout est beau lorsque je crée juste un nouveau fichier
+
+// Pour fusionner une branche avec le master
+$ git merge fichierCSS
+
+// Une fois tout le developpment terminé, notre commit tout beau tout propre. On peut le pousser sur le gitHub
+$git push
+
+// Pour récupère la dernière version du projet du gitHub
+$ git pull
+
+// Si on a pas de projet sur notre git (local) il nous faut le lien du projet sur le gitHub, puis :
+$ git clone https://github.com/toto/toto.git
+
+// Pour pousser un projet déjà en local sur github :
+$ git remote add origin https://github.com/Oazar27/test-git.git
+$ git push -u origin master
+(la première fois, il demandera le mail ou le nom d'user et le mot de passe)
