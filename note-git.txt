@@ -64,7 +64,7 @@ $ touch .gitignore
 $ git branch fichierCSS
 // Et pour nous placer dans cette branch
 $ git checkout fichierCSS
-// on nou sindique maintenant que nous sommes sur la branche fichierCSS
+// on nous indique maintenant que nous sommes sur la branche fichierCSS
 
 // Avoir la liste des branche
 $ git branch --list
