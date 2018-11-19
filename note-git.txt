@@ -46,7 +46,7 @@ $ git checkout -- .
 
 // Donc une fois que notre pré-sauvegarde est bien belle, on va la sauvegarder (commit)
 $ git commit
---> il y a une console VIM. L'idée s'est de commenter pourquoi on fait un commit. Ça nous permet de laisser une trace et dans le cas où on doit revenir en arrière
+--> il y a une console VIM. L'idée c'est de commenter pourquoi on fait un commit. Ça nous permet de laisser une trace et dans le cas où on doit revenir en arrière
 Appuyer sur « i » pour voir la commende --INSERT-- et ajouter votre commentaire.
 Echap pour sortir de l'éditeur
 Puis
@@ -56,7 +56,7 @@ Puis
 Si on veut aller plus vite et sauter les étapes VIM
 $ git commit -m 'Mes changements'
 
-//La commance (ou plutôt le fichier) .gitignore pour ignore certains fichier
+//La commande (ou plutôt le fichier) .gitignore pour ignore certains fichier
 // On crée le fichier :
 $ touch .gitignore
 
